@@ -25,6 +25,16 @@ function comprobNumbr(){
     }
 }
 
+function invalidNumber(){
+    const numberValue = parseInt(numberInput.value);
+    if (numberValue > 100){
+        clueText.innerHTML = 'El número debe estar entre 1 y 100';
+    } else if (numberValue < 0){
+        clueText.innerHTML = 'El número debe estar entre 1 y 100';
+    } else {
+        comprobNumbr();
+    }
+}
 
 const secretNumber = getRandomNumber(100);
 console.log(secretNumber);
@@ -39,5 +49,5 @@ button.addEventListener('click', (ev) => {
     ev.preventDefault;
     //console.log(tryCounter(0));
     console.log('Funciona');
-    console.log(comprobNumbr());
+    invalidNumber();
 });
