@@ -39,17 +39,15 @@ function invalidNumber(){
 const secretNumber = getRandomNumber(100);
 console.log(secretNumber);
 
-function count() {
-    let count = '';
-    count++;
-    return count;
+
+let count = 0;
+function counter() {
+    countText.innerHTML = 'Intentos: ' + (++count);
 }
-
-
 
 button.addEventListener('click', (ev) => {
     ev.preventDefault;
     invalidNumber();
-    count();
+    counter();
     countText.innerHTML = 'Intentos: ' + count ;
 });
