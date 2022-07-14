@@ -6,12 +6,13 @@ const countText = document.querySelector('.js-count');
 const winText = document.querySelector('.js-win');
 const form = document.querySelector('.js-form');
 const resetButton = document.querySelector('.js-reset');
-const printClueText = clueText;
+
+const clueInitialText = clueText.textContent;
+
 
 function printTextInHTML(element, text){
     element.innerHTML = text
 };
-
 
 function printInClueText(text){
     printTextInHTML(clueText, text);
@@ -26,13 +27,14 @@ console.log(secretNumber);
 
 function checkNumber(numberValue){
     if (numberValue === secretNumber){
-        printInClueText('Has ganado campeona!!!');
+        printTextInHTML(winText, `¡¡¡Has ganado, el número era ${secretNumber}!!!`);
+        printInClueText('¿Quieres intentarlo otra vez?')
     } 
     else if (numberValue > secretNumber) {
-        printInClueText('Demasiado alto');
+        printInClueText(`El número ${numberInput.value} es demasiado alto`);
     } 
     else if (numberValue < secretNumber) {
-        printInClueText('Demasiado bajo');
+        printInClueText(`El número ${numberInput.value} es demasiado bajo`);
     }
 }
 
@@ -62,7 +64,7 @@ function resetCounter() {
     printCounter();
 }
 
-function resetGame() {
+function resetNumber() {
     resetCounter();
     secretNumber = getRandomNumber(100);
 }
@@ -71,9 +73,13 @@ function resetInput() {
     numberInput.value = ''
 }
 
-function resetClue() {
-     const printClueText = clueText.textContent;
-    printInClueText(pritnClueText);
+function resetClueText(){
+    printInClueText(clueInitialText);
+}
+
+function resetWinText() {
+    printTextInHTML(winText, '');
+
 }
 
 button.addEventListener('click', (ev) => {
@@ -83,21 +89,27 @@ button.addEventListener('click', (ev) => {
         checkNumber(numberValue);
         addToCounter();
         printCounter();
+        resetInput();
+
     } else {
         printInClueText('Error. Debes introducir sólo números entre 0 y 100.')
     }
     
 });
 
-
+function resetGame() {
+    resetNumber();
+    resetInput();
+    resetClueText();
+    resetWinText();
+}
 
 resetButton.addEventListener("click", (ev) => {
     ev.preventDefault;
-    resetGame();
-    resetInput();
-    resetClue();
+    resetGame()
 } )
 
 form.addEventListener("click", function(event){
     event.preventDefault()
   });
+

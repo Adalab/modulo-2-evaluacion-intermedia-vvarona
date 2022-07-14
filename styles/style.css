@@ -35,24 +35,57 @@
     text-align: center;
 }
 
+.win-text {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    margin: 1.5rem;
+    font-weight: 800;
+
+    background-image: linear-gradient(to right, #d62d30, #ff0000, #ff8700, #ffd300, #a1ff0a, #0aefff, #580aff, #be0aff);
+    background-clip: text ;
+    color: transparent;
+    background-size: 800%;
+    animation: bg-animation 2.5s infinite alternate-reverse;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes bg-animation {
+    from {
+        background-position: left;
+    }
+
+    to {
+        background-position: right;
+    }
+}
+
 .counter{
     border: 1px solid #563b3487;
     padding: 1rem;
-    margin-top: 5%;
+    margin-top: 2rem;
     border-radius: 0.35rem;
 }
 
 .form {
-    text-align: center;
+    justify-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    width: 300px;
+}
+
+.grid-col-span-2 {
+    grid-column: span 2;
 }
 
 .button {
     border: none;
-    padding: 1rem 3.5rem;
+    width: 100%;
     background: linear-gradient(-45deg, #ff5733,  #f17b61 );
     border-radius: 0.35rem;
     color: azure;
-    margin: 1rem 0.5rem;
     cursor: pointer;
     font-weight: 600;
     letter-spacing: 0.1rem;
@@ -60,14 +93,15 @@
 
 .reset{
     border: #ff5733 solid 0.1rem;
-    padding: 1rem 3.5rem;
+    width: 100%;
+    height: 4rem;
     background: none;
     border-radius: 0.35rem;
     color: #ff5733;
-    margin: 1rem 0.5rem;
     cursor: pointer;
     font-weight: 600;
     letter-spacing: 0.1rem;
+    background-color:transparent;
 }
 
 .reset:hover{
@@ -83,11 +117,10 @@
     border: solid 0.015rem #563b343b;
     border-radius: 0.25rem;
     height: 4rem;
-    width: 8rem;
-    background-color: rgb(255, 244, 230);
+    padding: .5rem 0 ;
+    background-color: white;
     font-size: 2rem;
     text-align: center;
-    margin: 1rem 0;
     filter: drop-shadow(0.1rem 0.1rem 0.25rem #563b3428);
     color:#373333;
     
