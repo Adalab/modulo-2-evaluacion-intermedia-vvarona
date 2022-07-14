@@ -44,6 +44,7 @@
 
     background-image: linear-gradient(to right, #d62d30, #ff0000, #ff8700, #ffd300, #a1ff0a, #0aefff, #580aff, #be0aff);
     background-clip: text ;
+    -webkit-background-clip: text;
     color: transparent;
     background-size: 800%;
     animation: bg-animation 2.5s infinite alternate-reverse;
