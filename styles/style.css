@@ -124,8 +124,9 @@
     text-align: center;
     filter: drop-shadow(0.1rem 0.1rem 0.25rem #563b3428);
     color:#373333;
-    
 }
+
+
 .button:hover{
     filter: drop-shadow(0.1rem 0.1rem 0.25rem #563b3487);
 
