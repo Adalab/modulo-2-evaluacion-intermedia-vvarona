@@ -5,16 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guess a Number</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-    <h1 class="title">Adivina el número</h1>
-    <h3 class="subtitle">Introduce aquí tu número.</h3>
-    <input type="number" class="js-number input" name="number" title="Introduce aquí tu número">
-    <button class="js-bunton" title="Prueba tu número">Prueba</button>
-    <p class="js-win paragrah"></p>
-    <p class="js-clue paragrah"></p>
-    <p class="js-count paragrah"></p>
-    <script src="./js/main.js"></script>
-</body> 
+    <main class="main">
+        <h1 class="title">Adivina el número</h1>
+        <h3 class="subtitle">Introduce aquí tu número.</h3>
+        <form action="" class="js-form form">
+            <input type="text" class="js-number input" name="number" title="Introduce aquí tu número">
+            <button class="js-bunton button" title="Prueba tu número">Prueba</button>
+            <button class="js-reset reset">Nuevo juego</button>
+        </form>
+        <p class="js-win paragrah"></p>
+        <p class="js-clue paragrah">Escribe el número y dale a Prueba.</p>
+        <p class="js-count paragrah counter">Número de intentos: 0</p>
+        <script src="./js/main.js"></script>
+        </body>
+    </main>
 </html>
